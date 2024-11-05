@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './shared/components/Header/Header';
+import { Container } from 'react-bootstrap';
+import { ProductList } from './shared/components/ProductList/ProductList';
+import { Footer } from './shared/components/Footer/Footer';
+import { Home } from './features/Home/Home';
+import { BrowserRouter as Router } from 'react-router-dom'
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+      <Router>
+        <div className="d-flex flex-column min-vh-100">
+          <Header/>
+            <Container className='flex-grow-1 mt-4'>
+              <Home/>
+            </Container>
+          <Footer/>
+        </div>
+      </Router>
+      
     </div>
   );
 }
