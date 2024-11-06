@@ -5,8 +5,8 @@ import { Home } from '../../features/Home/Home'
 export const AppRoutes = () =>{
     return(<>
         <Routes>
-            <Route path='/Home' element={<Home/>} />
-            <Route path='daftar' element={<Daftar/>} />
+            <Route path='/home' element={<Home/>} />
+            <Route path='/daftar' element={<Daftar/>} />
         </Routes>
     </>)
 }

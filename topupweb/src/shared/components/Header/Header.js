@@ -1,18 +1,40 @@
-import {Navbar, Nav} from 'react-bootstrap'
+import {Navbar, Nav, Container} from 'react-bootstrap'
+import './Header.css'
 
 const Header = () =>{
+
+    
+
+
     return(<>
-        <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">Aoshi Market</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="ml-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#products">Products</Nav.Link>
-                    <Nav.Link href="#contact">Contact</Nav.Link>
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
+        <div >
+            <Navbar className='header-container' bg="light" expand="lg">
+                <Container fluid>
+                    
+                    <Navbar.Brand href="#home">Aoshi Market</Navbar.Brand>
+
+                        <Nav className='me-auto'>
+                        <Navbar.Toggle aria-controls="bnavbar-content" />
+                        <Navbar.Collapse id="navbar-content">
+                        <Nav className="ml-auto">
+                            <Nav.Link href="/home" activeClassName="active">Home</Nav.Link>
+                            <Nav.Link href="#products" activeClassName="active">Cek Transaksi</Nav.Link>
+                            <Nav.Link href="#contact" activeClassName="active">Kalkulator</Nav.Link>
+                        </Nav>
+
+                        <Nav className='mr-auto'>
+                            <Nav.Link href="/search" activeClassName="active">Search</Nav.Link>
+                            <Nav.Link href="/language" activeClassName="active">Language</Nav.Link>
+                        </Nav>
+
+                        </Navbar.Collapse>
+                        </Nav>
+
+                        
+
+                </Container>
+            </Navbar>
+        </div>
     </>)
 }
 

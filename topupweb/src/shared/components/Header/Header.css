@@ -1,0 +1,24 @@
+.header-container {
+    padding-inline: 4rem; /* Adjust padding as needed */
+    display: flex;
+    flex-grow: 1;
+
+  }
+  
+  /* Add media queries for responsiveness */
+  @media (max-width: 768px) {
+    .header-container {
+      padding: 0.5rem; /* Adjust padding for smaller screens */
+    }
+  }
+
+  .header-container {
+    border-bottom: 2px solid #ccc ; /* Add bottom border */
+    --bs-navbar-padding-y: 0px;
+
+  }
+  
+  .active {
+    /* background-color: lightgray; Highlight active link */
+    border-bottom: 2px solid blue; /* Add bottom border to active link */
+  }
