@@ -1,0 +1,148 @@
+/* .price-card-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+}
+
+.price-card {
+    background-color: aquamarine;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    border-radius: 20px;
+    overflow: hidden;
+    min-width: 12rem;
+    max-width: calc(100% / 3); 
+    
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+} */
+/* 
+
+.price-card-left{
+    display: flex;
+    flex-direction: column;
+
+    font-size: 1rem;
+    width: 100%;
+}
+
+.price-card-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 5rem;
+    height: 5rem;
+    
+}
+
+.price-card-title {
+    font-weight: bolder;
+    font-size: 12px;
+}
+
+.price-card-price { 
+    font-size: 12px;
+    
+}
+
+@media screen and (max-width: 1000px) {
+    .price-card {
+      width: 100%;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .container {
+      width: 100%;
+    }
+  
+    .price-card {
+      width: 50%;
+    }
+  }
+   */
+
+
+
+
+
+
+
+/* Container for price cards */
+.price-card-container {
+    /* display: flex;
+    flex-wrap: wrap;
+    gap: 10px;  */
+    /* Space between cards */
+    /* justify-content: center; */
+    /* padding: 16px; */
+    /* min-width: 27rem; */
+
+    display: grid;
+    gap: 16px; /* Space between cards */
+    padding: 16px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Individual price card styling */
+  .price-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 10rem;
+    /* max-width: 20rem; */
+     /* Define a max width for the cards */
+  }
+  
+  /* Left section of the card */
+  .price-card-left {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    /* width: 7rem; */
+    /* width: min-content; */
+  }
+  
+  /* Image styling */
+  .price-card-right img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 5rem;
+    height: 5rem;
+  }
+  
+  
+.price-card-title {
+    font-weight: bolder;
+    font-size: 12px;
+
+    word-break: break-all;
+}
+
+.price-card-price { 
+    font-size: 12px;
+    
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .price-card-container {
+      grid-template-columns: repeat(3, 1fr); /* For larger screens: 3 columns */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .price-card-container {
+      grid-template-columns: repeat(2, 1fr); /* For medium screens: 2 columns */
+    }
+  }
