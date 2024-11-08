@@ -9,3 +9,41 @@
     gap: 1rem;
 }
 
+.transaction-container{
+    
+}
+
+.banner-section {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  .game-info-section h3 {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .game-info-section p {
+    margin: 0;
+  }
+
+  .product-thumbnail-container {
+    perspective: 800px; /* Adjust this value for more or less depth */
+}
+
+.product-thumbnail-container img {
+    position: relative;
+    width: 100%; /* Ensures it adapts to the parent container */
+    transform: rotateY(25deg) rotateX(0deg);
+    transform-origin: left center;
+    /* transition: transform 0.3s ease-in-out; */
+}
+
+/* Optional: Add a hover effect to emphasize the 3D look */
+.product-thumbnail-containers img:hover {
+    transform: rotateY(25deg) rotateX(-4deg) scale(1.05);
+}
+
+.thumbnail-container{
+    background-color: blanchedalmond;
+}

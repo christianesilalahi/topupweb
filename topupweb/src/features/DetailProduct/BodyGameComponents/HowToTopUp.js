@@ -19,8 +19,10 @@ export const HowToTopUp = ({game="nama game", currency="currency game"}) => {
                 <li>Masukkan No WhatsApp</li>
             </ol>
 
-            <Col md={4}>
-                <Card className="mb-4">
+            <Col >
+                <Card 
+                    // className="mb-4"
+                    >
                     <Card.Body>
                         <Card.Title>Deskripsi dan Cara Melakukan Transaksi</Card.Title>
                         <ul>
