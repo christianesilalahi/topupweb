@@ -1,0 +1,7 @@
+.check-transaction-container{
+    max-width: 80rem;
+
+    display: grid;
+    grid-auto-flow: row;
+    grid-row-gap: 1rem;
+}

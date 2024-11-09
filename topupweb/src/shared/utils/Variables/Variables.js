@@ -12,3 +12,16 @@ export const HowToTopUpSteps = {
         "Masukkan No WhatsApp"
     ]
 }
+
+export const PatternInvoices = "AMXXXXXXXXXXXXX"
+
+export const TestProducts = {
+    id: 1,
+    name: 'Mobile Legend HOK',
+    description: 'Description of Product 1',
+    //image address
+    image: '',
+
+    
+
+}

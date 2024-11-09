@@ -14,14 +14,15 @@ import { Input } from "../../shared/components/Input/Input"
 import { PaymentOptions } from "./PaymentOptions/PaymentOptions"
 
 export const DetailProduct = () => {
-    //const {productID} = useParams()
-    // const [product, setProduct] = useState(null)
+    const {productID} = useParams()
+    const [product, setProduct] = useState(null)
 
     const [jumlah, setJumlah] = useState("")
 
     const jumlahOnChange = (v) =>{setJumlah(v.target.value)}
 
-    let product = {
+    //product dummy
+    let products = {
         id: 1,
         name: 'Product 1',
         description: 'Description of Product 1',
@@ -29,25 +30,25 @@ export const DetailProduct = () => {
     }
 
 
-    // useEffect(()=>{
-    //     const fetchProduct = async() => {
-    //         try{
-    //             const response = await fetch(`/api/products/${productID}`)
-    //             const data = await response.json()
-    //             setProduct(data)
-    //         } catch (e) {
-    //             console.error('Error fetching product: ', e)
-    //         }
-    //     }
+    useEffect(()=>{
+        const fetchProduct = async() => {
+            try{
+                const response = await fetch(`/api/products/${productID}`)
+                const data = await response.json()
+                setProduct(data)
+            } catch (e) {
+                console.error('Error fetching product: ', e)
+            }
+        }
 
-    //     fetchProduct();
-    // }, productID)
+        fetchProduct();
+    }, productID)
 
-    // if (!product) {
-    //     return(<>
-    //         <div>Loading...</div>
-    //     </>)
-    // }
+    if (!product) {
+        return(<>
+            <div>Loading...</div>
+        </>)
+    }
 
     function priceCard(){
         return(<>
