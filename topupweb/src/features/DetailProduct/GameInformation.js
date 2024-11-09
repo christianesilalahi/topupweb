@@ -34,8 +34,8 @@ export const GameInformation = ({game="nama game", dev="developer", image}) => {
                     className="product-thumbnail-img z-20 mb-n4 rounded-2 shadow-lg"
                     src={image}
                     style={{
-                    width: '130px',
-                    height: '130px',
+                    width: '160px',
+                    height: '160px',
                     objectFit: 'cover'
                     }}
                 />
@@ -44,9 +44,9 @@ export const GameInformation = ({game="nama game", dev="developer", image}) => {
 
             {/* Information Section */}
             <div className="py-4 py-sm-0">
-                <h3>{game}</h3>
+                <text className="text-lg font-bold">{game}</text>
                 <p>{dev}</p>
-                <div className="d-flex flex-column flex-md-row gap-3 align-items-start text-md-start">
+                <div className="d-flex flex-column flex-md-row gap-3 align-items-start text-md-start short-text-info text-ms">
                     <span>⚡ Proses Cepat</span>
                     <span>💬 Layanan Chat 24/7</span>
                     <span>🌐 All Region</span>

@@ -1,0 +1,14 @@
+.dropdown-inactive {
+    justify-content: space-between;
+    padding: 1rem;
+
+    font-weight: normal;
+
+    background-color: rgba(59,59,66,255);
+    width: 100%;
+}
+
+.dropdown-inactive-container{
+    display: flex;
+    background-color: rgba(148,148,149,255);
+}

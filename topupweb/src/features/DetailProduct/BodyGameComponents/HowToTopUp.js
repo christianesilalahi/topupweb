@@ -1,42 +1,46 @@
 import { Card, Col } from 'react-bootstrap'
+import { Dropdown } from '../../../shared/components/Dropdown/Dropdown'
+import { HowToTopUpSteps } from '../../../shared/utils/Variables/Variables'
 import './../DetailProduct.css'
 
 export const HowToTopUp = ({game="nama game", currency="currency game"}) => {
-    let text = `Top Up ${currency} ${game} Harga Paling Murah
-    Cara Top Up ${currency} ${game} Termurah :`
+    
+    // Set Up Steps in ./src/shared/utils/Variables/Variables.js
+
+    // Set view for item of list of steps
+    const listSteps = (steps) => {
+
+        return steps.map((step, index)=>{
+            return(<>
+                <li>
+                    {step}
+                </li>
+            </>)
+        })
+    }
+
+    // Set up view for inside the dropdown
+    const insideSteps = () => {
+        return(
+            <>
+                {HowToTopUpSteps.subtitle}
+                <p/>
+                <ol>
+                    {listSteps(HowToTopUpSteps.items)}
+                </ol>
+            </>
+        )
+    }
+
+    // Set the view for the How to Top Up
     return (<>
         <div className="text-box">
-            {text}
 
-            <ol>
-                <li>Masukkan ID & Server</li>
-                <li>Pilih Nominal</li>
-                <li>Pilih Pembayaran</li>
-                <li>Tulis Kode Promo (jika ada)</li>
-                <li>Masukkan No WhatsApp</li>
-                <li>Klik Order Now & Lakukan Pembayaran</li>
-                <li>Diamonds Otomatis Masuk Ke Akun Game</li>
-                <li>Masukkan No WhatsApp</li>
-            </ol>
-
-            <Col >
-                <Card 
-                    // className="mb-4"
-                    >
-                    <Card.Body>
-                        <Card.Title>Deskripsi dan Cara Melakukan Transaksi</Card.Title>
-                        <ul>
-                            <li>Masukkan ID & Server</li>
-                            <li>Pilih Nominal</li>
-                            <li>Pilih Pembayaran</li>
-                            <li>Tulis Kode Promo (jika ada)</li>
-                            <li>Masukkan No WhatsApp</li>
-                            <li>Klik Order Now & Lakukan Pembayaran</li>
-                            <li>Diamonds Otomatis Masuk Ke Akun Game</li>
-                        </ul>
-                    </Card.Body>
-                </Card>
-            </Col>
+            <Dropdown 
+                title={HowToTopUpSteps.title} 
+                component={insideSteps()}
+                isOpenValue={true}
+            />
         </div>
     </>)
 }

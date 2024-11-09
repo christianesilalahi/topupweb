@@ -89,15 +89,16 @@
   }
   
   /* Individual price card styling */
-  .price-card {
+.price-card {
+    background-color: rgba(63,63,71,255);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #ccc;
     border-radius: 10px;
     padding: 16px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     min-width: 10rem;
+    gap: .15rem;
     /* max-width: 20rem; */
      /* Define a max width for the cards */
   }
@@ -117,8 +118,9 @@
     align-items: center;
     justify-content: center;
 
-    min-width: 5rem;
-    height: 5rem;
+    /* min-width: 3rem; */
+    max-height: 3rem;
+    max-width: 3rem;
   }
   
   

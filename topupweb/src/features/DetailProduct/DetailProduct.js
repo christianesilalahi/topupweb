@@ -11,6 +11,7 @@ import { FormSelection } from "./BodyGameComponents/FormSelection"
 import { TopUpCard } from "../../shared/components/TopUpCard/TopUpCard"
 import { PriceCard } from "../../shared/components/PriceCard/PriceCard"
 import { Input } from "../../shared/components/Input/Input"
+import { PaymentOptions } from "./PaymentOptions/PaymentOptions"
 
 export const DetailProduct = () => {
     //const {productID} = useParams()
@@ -61,7 +62,7 @@ export const DetailProduct = () => {
 
     function jumlahPembelian(){
         return(<>
-            <Input label="Masukkan Jumlah Pembelian" inputName={"Masukkan Jumlah Pembelian"} value={jumlah} onChange={jumlahOnChange} />
+            <Input inputName={"Masukkan Jumlah Pembelian"} value={jumlah} onChange={jumlahOnChange} />
 
         </>)
     }
@@ -76,7 +77,7 @@ export const DetailProduct = () => {
     <div>
         
         {/* banner */}
-        <div className="banner-section text-white text-center py-5" style={{ backgroundImage: `url(${banner})`, backgroundSize: 'cover', backgroundPosition: 'top', height:"224px" }}>
+        <div className="banner-section text-white text-center py-5" style={{ backgroundImage: `url(${banner})`, backgroundSize: 'cover', backgroundPosition: 'top', height:"340px" }}>
         </div>
 
         {/* Game Information */}
@@ -88,7 +89,7 @@ export const DetailProduct = () => {
         <div className="transaction-container game-info-section py-4 container-fluid">
             <Row>
                 <Col lg={4} xs={12}>
-                    <div>
+                    <div className="">
                         <BodyGameTransactionSection/>
                     </div>
                 </Col>
@@ -100,7 +101,7 @@ export const DetailProduct = () => {
 
                         <TopUpCard firstBox="3" secondBox="Masukkan Jumlah Pembelian" component={jumlahPembelian()} />
 
-                        <TopUpCard firstBox="4" secondBox="Pilih Pembayaran" /> 
+                        <TopUpCard firstBox="4" secondBox="Pilih Pembayaran" component={<PaymentOptions/>} /> 
 
                         <TopUpCard firstBox="5" secondBox="Kode Promo" />
 

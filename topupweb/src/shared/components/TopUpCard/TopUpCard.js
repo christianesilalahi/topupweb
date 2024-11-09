@@ -11,7 +11,7 @@ export const  TopUpCard = ({firstBox = "1" , secondBox = "", component}) => {
                     <text>{secondBox}</text>
                 </div>
             </div>
-            <div className=' top-up-3'>
+            <div className=' top-up-3 dark'>
                 {component}
             </div>
         </div>

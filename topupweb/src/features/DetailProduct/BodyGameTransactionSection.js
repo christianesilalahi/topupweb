@@ -4,7 +4,7 @@ import { HowToTopUp } from "./BodyGameComponents/HowToTopUp"
 export const BodyGameTransactionSection = () => {
     return(<>
         <div>
-            <Container className="transaction-section py-4" fluid>
+            <Container className="transaction-section steps-container" fluid>
                 <Row>
                     <HowToTopUp/>
                 </Row>

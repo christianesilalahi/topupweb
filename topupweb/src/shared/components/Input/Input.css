@@ -1,31 +1,41 @@
-.input-container{
+.input-container {
     width: 100%;
     display: flex;
-
     flex-direction: column;
-}
-
-.input-form{
-    background-color: lightgray;
+    gap: .25rem;
+  }
+  
+  .input-form {
+      display: flex;
+    font-weight: normal;
+    background-color: rgba(63, 63, 71, 255); /* Background color */
     border-radius: 12px;
-    border-color: darkgray;
-    border: 2px;
-
+    border: 1px solid rgba(32, 156, 215, 1); /* Border color (1px) */
     display: block;
     width: 100%;
-    padding: .375rem .75rem;
-    font-size: 1rem;
+    padding: 8px;
+    font-size: 0.75rem;
     font-weight: 400;
-    line-height: 1.5;
-    color: var(--bs-body-color);
-    appearance: none;
-    background-color: var(--bs-body-bg);
-    background-clip: padding-box;
-    border: var(--bs-border-width) solid var(--bs-border-color);
-    border-radius: var(--bs-border-radius);
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
-
-*, ::after, ::before {
+    color: rgba(250, 250, 249, 255);
+    outline: none; /* Prevents default outline */
+    transition: box-shadow 0.3s ease; /* Transition only for box-shadow */
+    box-sizing: border-box; /* Ensure padding and border do not affect the element's size */
+  }
+  
+  /* Focus state */
+  .input-form:focus {
+    box-shadow: 0 0 0 2px rgba(32, 156, 215, 1); /* Create the illusion of a thicker border using shadow */
+  }
+  
+  *, ::after, ::before {
     box-sizing: border-box;
-}
+  }
+  
+  /* Label styling */
+  .label-form {
+      display: flex;
+    font-size: 0.75rem;
+    font-weight: normal;
+    color: rgba(250, 250, 249, 255); /* Label color to match input text */
+  }
+  

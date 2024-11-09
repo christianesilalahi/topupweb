@@ -1,49 +1,66 @@
-.text-box{
-    word-wrap: break-word;
-    white-space: initial;
-}
-
-.body-game-order{
+/* Navbar container */
+.header-container {
+    max-width: 80rem; /* Maximum width for large screens */
+    margin: 0 auto;   /* Center the navbar content */
+    width: 100%;      /* Ensure it takes up full width on smaller screens */
+    padding-inline: 1rem; /* Add some padding on the sides for large screens */
+  }
+  
+  /* Adjust padding for smaller screens */
+  @media (max-width: 768px) {
+    .header-container {
+      padding: 0.5rem;
+    }
+  }
+  
+  /* Active class for active link */
+  .active {
+    border-bottom: 2px solid blue;
+  }
+  
+  /* Full width class */
+  .width-full {
+    width: 100% !important;
+  }
+  
+  /* Ensure the form and search bar behave well on large screens */
+  @media (min-width: 992px) {
+    .d-none.d-lg-flex {
+      display: flex !important;
+    }
+  }
+  
+  /* Align Navbar items properly */
+  .navbar .navbar-collapse {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.transaction-container{
-    
-}
-
-.banner-section {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    justify-content: space-between;
   }
   
-  .game-info-section h3 {
-    font-weight: bold;
-    margin: 0;
+  .navbar .navbar-nav {
+    flex: 1;
   }
   
-  .game-info-section p {
-    margin: 0;
+  .navbar .navbar-nav .nav-link {
+    color: white;
+    margin-right: 1rem;
   }
-
-  .product-thumbnail-container {
-    perspective: 800px; /* Adjust this value for more or less depth */
-}
-
-.product-thumbnail-container img {
-    position: relative;
-    width: 100%; /* Ensures it adapts to the parent container */
-    transform: rotateY(25deg) rotateX(0deg);
-    transform-origin: left center;
-    /* transition: transform 0.3s ease-in-out; */
-}
-
-/* Optional: Add a hover effect to emphasize the 3D look */
-.product-thumbnail-containers img:hover {
-    transform: rotateY(25deg) rotateX(-4deg) scale(1.05);
-}
-
-.thumbnail-container{
-    background-color: blanchedalmond;
-}
+  
+  .navbar .navbar-nav .nav-link.active {
+    border-bottom: 2px solid #007bff;
+  }
+  
+  .navbar .form-inline {
+    display: flex;
+  }
+  
+  .navbar .form-inline .input-group {
+    margin-right: 1rem;
+  }
+  
+  /* Remove right margin on mobile */
+  @media (max-width: 992px) {
+    .navbar .ms-auto {
+      margin-right: 0 !important;
+    }
+  }
+  

@@ -1,13 +1,8 @@
 .top-up-card{
     max-width: 100%;
     min-width: 26rem;
-    /* border: 2px solid red; */
-    border-radius: 20px;
+    border-radius: 12px;
     overflow: hidden;
-
-
-
-    background-color: aqua;
 }
 
 .top-up-top {
@@ -15,12 +10,12 @@
     display: flex;
     flex-direction: row;
     
-    background-color: lightslategrey;
+    /* background-color: lightslategrey; */
 }
 
 .top-up-1{
     width: 2.5rem;
-    background-color: cyan;
+    background-color: rgba(32,156,215,255);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,18 +25,19 @@
 }
 .top-up-2{
     width: 100%;
-    background-color: lightslategray;
+    background-color: rgba(63,63,71,255);
     display: flex;
     align-items:center;
     justify-content:flex-start;
     padding: 0.5rem;
 
-    color: white;
+    color:  rgba(250,250,249,255);
     font-weight: bold;
+    font-size: .875rem;
 }
 
 .top-up-3{
-    background-color: darkgray;
+    background-color: rgba(53,53,57,255);
     /* display: flex; */
     align-items:center;
     justify-content:flex-start;
@@ -49,8 +45,12 @@
     min-height: 3rem;
     max-height: 100%;
 
-    color: white;
+    color:  rgba(250,250,249,255);
     font-weight: bold;
 
-    gap: 1rem;
+    gap: .25rem;
+}
+
+.dark {
+    background-color: 240 3.45% 17.06%;
 }

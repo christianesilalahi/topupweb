@@ -1,24 +1,93 @@
+/* Full width for header but max-width for the content */
 .header-container {
-    padding-inline: 4rem; /* Adjust padding as needed */
+  width: 100%;
+  padding-inline: 1rem; /* Optional: some padding to avoid items touching the edges */
+}
+
+.header-content {
+  max-width: 80rem; /* Max width for the content */
+  margin: 0 auto; /* Center the content horizontally */
+  width: 100%;
+}
+
+/* Make sure right-side items are sticky to the right */
+.right-side {
+  /* position: absolute; */
+  right: 1rem;
+}
+
+/* Active class for active link */
+/* .active {
+  border-bottom: 2px solid blue;
+} */
+
+/* Full width utility */
+.width-full {
+  width: 100% !important;
+}
+
+/* Navbar Collapse Custom: Slide-in from left on smaller screens */
+.navbar-collapse-custom {
+  transition: transform 0.3s ease;
+}
+
+/* Slide effect and sidebar top bar for the collapse */
+@media (max-width: 992px) {
+  .navbar-collapse-custom {
+    transform: translateX(-100%); /* Hide the navbar initially */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 75%;
+    max-width: 300px;
+    background-color: #343a40;
+    padding: 1rem;
+    z-index: 1040;
+  }
+  
+  .navbar-collapse-custom.show {
+    transform: translateX(0); /* Slide-in on toggle */
+  }
+
+  .sidebar-content {
     display: flex;
-    flex-grow: 1;
-
-  }
-  
-  /* Add media queries for responsiveness */
-  @media (max-width: 768px) {
-    .header-container {
-      padding: 0.5rem; /* Adjust padding for smaller screens */
-    }
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    flex-direction: column;
+    /* border-bottom: 1px solid #ccc; */
   }
 
-  .header-container {
-    border-bottom: 2px solid #ccc ; /* Add bottom border */
-    --bs-navbar-padding-y: 0px;
+  .close-btn {
+    color: white;
+    font-size: 1.5rem;
+  }
 
+  /* Menu items in one column */
+  .navbar-nav {
+    flex-direction: column;
+    margin-top: 2rem;
   }
-  
-  .active {
-    /* background-color: lightgray; Highlight active link */
-    border-bottom: 2px solid blue; /* Add bottom border to active link */
+
+  .navbar-nav .nav-link {
+    margin-bottom: 1rem;
   }
+}
+
+/* Ensure mobile menu items are centered */
+.d-lg-none {
+  display: none !important;
+}
+
+@media (max-width: 992px) {
+  .d-lg-none {
+    display: block !important;
+  }
+}
+
+
+.side-bar-container{
+  display: flex;
+
+}
