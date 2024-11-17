@@ -1,5 +1,7 @@
 import { ProductList } from "../../shared/components/ProductList/ProductList";
 import logo from "../../logo.svg"
+import { Carousel, Carousels } from "../../shared/components/Carousel/Carousel";
+import './Home.css'
 
 export const Home = () =>{
     const products = [
@@ -31,9 +33,13 @@ export const Home = () =>{
       ];
 
     return(<>
-        <div>
-            <h2 className="mb-4">Product Dashboard</h2>
-            <ProductList products={products}/>
+        <div className="home-container">
+            {/* <Carousel /> */}
+            <Carousels links={[]} />
+            <div>
+                <h2 className="mb-4">Product Dashboard</h2>
+                <ProductList products={products}/>
+            </div>
         </div>
     </>)
 }

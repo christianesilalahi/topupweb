@@ -8,10 +8,10 @@ export const AppRoutes = () =>{
         <Routes>
             <Route path='/home' element={<Home/>} />
             {/* <Route path='/test' element={<DetailProduct/>} /> */}
-            <Route path='/test' element={<CheckTransaction/>} />
+            <Route path='/test' element={<Home/>} />
 
             {/* /get product by id */}
-            <Route path="/product/:id" element={<ProductPage />} /> {/* Dynamic route */}
+            <Route path="/product/:id" element={<DetailProduct />} /> {/* Dynamic route */}
 
         </Routes>
     </>)
