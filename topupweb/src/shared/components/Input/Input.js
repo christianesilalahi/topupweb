@@ -1,6 +1,6 @@
 import "./Input.css"
 
-export const Input = ({inputName, value, placeholder="", cName=[], onChange, label="", autoComplateValue=false}) => {
+export const Input = ({inputName, value, placeholder="", cName=[], onChange, label="", autoComplateValue=false, id="",}) => {
 
     return(<>
         <div 
@@ -9,6 +9,7 @@ export const Input = ({inputName, value, placeholder="", cName=[], onChange, lab
             <input 
                 className="input-form"
                 name={inputName} 
+                id={id}
                 value={value} 
                 placeholder={placeholder} 
                 onChange={onChange}

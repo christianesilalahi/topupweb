@@ -12,10 +12,47 @@ import { TopUpCard } from "../../shared/components/TopUpCard/TopUpCard"
 import { PriceCard } from "../../shared/components/PriceCard/PriceCard"
 import { Input } from "../../shared/components/Input/Input"
 import { PaymentOptions } from "./PaymentOptions/PaymentOptions"
+import { DefaultOrderData } from "../../shared/utils/Variables/Variables"
 
 export const DetailProduct = () => {
-    const {productID} = useParams()
-    const [product, setProduct] = useState(null)
+    const {id} = useParams()
+    const [product, setProduct] = useState({
+        id: 1,
+        name: 'Product 1',
+        description: 'Description of Product 1',
+        image: test_image,
+    })
+
+    const [orderData, setOrderData] = useState(DefaultOrderData)
+    const [price, setPrice] = useState("0")
+    const [selectedCard, setSelectedCard] = useState(null);
+    const [handleSticky, setHandleSticky] = useState(false)
+
+
+    //handle order data change
+    const handleOrderDataChange = (event) => {
+        const { name, value } = event.target
+        setOrderData(prevData => ({
+            ...prevData,
+            [name]: value
+        }))
+    }
+
+    const handlePriceChange = (newPrice) => {
+        setPrice(newPrice)
+        setSelectedCard(newPrice)
+        setOrderData(prevData => ({
+            ...prevData,
+            nominal: newPrice
+        }))
+        setHandleSticky(true)
+    }
+
+    useEffect(()=>{
+        console.log(orderData)
+        console.log(price)
+        console.log(selectedCard)
+    }, [orderData, price])
 
     const [jumlah, setJumlah] = useState("")
 
@@ -30,41 +67,90 @@ export const DetailProduct = () => {
     }
 
 
-    useEffect(()=>{
-        const fetchProduct = async() => {
-            try{
-                const response = await fetch(`/api/products/${productID}`)
-                const data = await response.json()
-                setProduct(data)
-            } catch (e) {
-                console.error('Error fetching product: ', e)
-            }
-        }
+    // useEffect(()=>{
+    //     const fetchProduct = async() => {
+    //         try{
+    //             const response = await fetch(`/api/products/${id}`)
+    //             const data = await response.json()
+    //             setProduct(data)
+    //         } catch (e) {
+    //             console.error('Error fetching product: ', e)
+    //         }
+    //     }
 
-        fetchProduct();
-    }, productID)
+    //     fetchProduct();
+    // }, id)
 
     if (!product) {
-        return(<>
-            <div>Loading...</div>
-        </>)
+        setProduct({
+            id: 1,
+            name: 'Product 1',
+            description: 'Description of Product 1',
+            image: test_image,
+        }
+    )
+        console.log(product)
+        // return(<>
+        //     <div>Loading...</div>
+        // </>)
     }
 
-    function priceCard(){
+    const priceCard = () => {
         return(<>
             <div className="price-card-container">
-            <PriceCard/>
-            <PriceCard/>
-            <PriceCard/>
+            <PriceCard nominal="10000" 
+                handleOnChange={handlePriceChange} 
+                isActive={selectedCard === "10000"}
+                />
+            <PriceCard nominal="12000" handleOnChange={handlePriceChange} 
+                isActive={selectedCard === "12000"} />
+            <PriceCard nominal="20000" handleOnChange={handlePriceChange} 
+                isActive={selectedCard === "20000"} />
 
             </div>
         </>)
     }
 
-    function jumlahPembelian(){
+    const jumlahPembelian = () => {
         return(<>
-            <Input inputName={"Masukkan Jumlah Pembelian"} value={jumlah} onChange={jumlahOnChange} />
+            <Input 
+                inputName={"nominal"} 
+                placeholder={"Masukkan jumlah pembelian"}
+                onChange={handleOrderDataChange}
+                value={orderData.nominal}
+            />
+        </>)
+    }
 
+    const kodePromo = () => {
+        return(<>
+            <Input 
+                inputName={"kodePromo"} 
+                placeholder={"Ketik kode promo Anda"}
+                onChange={handleOrderDataChange}
+                value={orderData.kodePromo}
+            />
+        </>)
+    } 
+
+    const detailKontak = () => {
+        return(<>
+            <Input 
+                inputName={"email"} 
+                placeholder={"Email"}
+                onChange={handleOrderDataChange}
+                value={orderData.email}
+                label={"Email"}
+            />
+
+
+            <Input 
+                inputName={"nomorTelepon"} 
+                placeholder={"No. WhatsApp"}
+                onChange={handleOrderDataChange}
+                value={orderData.nomorTelepon}
+                label={"No. WhatsApp"}
+            />
         </>)
     }
 
@@ -76,7 +162,6 @@ export const DetailProduct = () => {
 
     return(<>
     <div>
-        
         {/* banner */}
         <div className="banner-section text-white text-center py-5" style={{ backgroundImage: `url(${banner})`, backgroundSize: 'cover', backgroundPosition: 'top', height:"340px" }}>
         </div>
@@ -94,9 +179,13 @@ export const DetailProduct = () => {
                         <BodyGameTransactionSection/>
                     </div>
                 </Col>
-                <Col lg={8} xs={12}>
+                <Col lg={8} xs={12} >
                     <div className="body-game-order">
-                        <TopUpCard firstBox="1" secondBox="Masukkan data akun" component={<FormSelection/>} />
+                        <TopUpCard firstBox="1" 
+                            secondBox="Masukkan data akun" 
+                            component={<FormSelection orderData={orderData} handleOnChange={handleOrderDataChange} />}
+                            
+                        />
                         
                         <TopUpCard firstBox="2" secondBox="Pilih Nominal" component={priceCard()}/>
 
@@ -104,15 +193,22 @@ export const DetailProduct = () => {
 
                         <TopUpCard firstBox="4" secondBox="Pilih Pembayaran" component={<PaymentOptions/>} /> 
 
-                        <TopUpCard firstBox="5" secondBox="Kode Promo" />
+                        <TopUpCard firstBox="5" secondBox="Kode Promo" component={kodePromo()}  />
 
-                        <TopUpCard firstBox="6" secondBox="Detail Kontak" />
+                        <TopUpCard firstBox="6" secondBox="Detail Kontak" component={detailKontak()} />
                     </div>
                 </Col>
             </Row>
         </div>
 
-        
+        {handleSticky && (<>
+        <div className="sticky-bottom-container">
+            <div className="text-center p-4" >
+                <h4>Selected Price: {selectedCard}</h4>
+                <p>This is a sticky div that stays at the bottom.</p>
+            </div>
+        </div>      
+        </>)}
 
         <h2>{product.name}</h2>
         <p>

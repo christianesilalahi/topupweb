@@ -22,7 +22,7 @@ export const GameInformation = ({game="nama game", dev="developer", image}) => {
         </div> */}
 
 
-    <div className="container d-flex align-items-center gap-2 thumbnail-container">
+    <div className="container d-flex align-items-center gap-4 thumbnail-container">
       
       {/* Thumbnail Section */}
         <div className="d-flex align-items-start gap-4">

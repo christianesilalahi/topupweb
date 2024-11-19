@@ -7,10 +7,11 @@
   
   .img-vw-profile{
     height: 100%;
-    max-height: 10rem;
+    /* max-height: 10rem; */
     width: 100%;
     border-radius: 20px;
     object-fit: cover;
+    aspect-ratio: 3 / 1;
   }
   
   .img-tl-ctn{
@@ -31,7 +32,7 @@
   }
   
   .container-slider {
-    max-width: 64rem;
+    /* max-width: 64rem; */
     /* height: 30vh; */
     min-height: 10rem;
     border-radius: 20px;
@@ -42,6 +43,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    aspect-ratio: 3 / 1;
   }
   
   .slide {

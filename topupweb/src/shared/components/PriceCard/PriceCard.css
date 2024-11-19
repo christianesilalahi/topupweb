@@ -87,10 +87,29 @@
     padding: 16px;
     grid-template-columns: repeat(3, 1fr);
   }
+
+.price-card-outer {
+  background-color: rgba(63,63,71,255);
+  padding: 4px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  /* background-color: green; */
+}
+
+.price-card-outer.active {
+  /* margin: 4px; */
+  /* background-color: blue; */
+
+  /* border:  inset 2px solid red; */
+  background-color:  rgba(32,156,215,255);
+  /* z-index: 10; */
+}
+
+
   
   /* Individual price card styling */
 .price-card {
-    background-color: rgba(63,63,71,255);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -99,6 +118,9 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     min-width: 10rem;
     gap: .15rem;
+
+    border: none;
+    
     /* max-width: 20rem; */
      /* Define a max width for the cards */
   }

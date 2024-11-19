@@ -1,7 +1,7 @@
 import { Card, Col, Form, Row } from "react-bootstrap"
 import { Input } from "../../../shared/components/Input/Input"
 
-export const FormSelection = () =>{
+export const FormSelection = ({orderData, handleOnChange}) =>{
     return(<>
         <div>
             <Col >
@@ -9,17 +9,21 @@ export const FormSelection = () =>{
                     {/* account data */}
                     <Col md={6} className="mb-3 form-item-row">
                         <Input 
-                            inputName={"ID"} 
+                            inputName={"id"} 
                             label={"ID"} 
                             placeholder={"Ketikan ID"}
+                            onChange={handleOnChange}
+                            value={orderData.id}
                         />
 
                     </Col>
                     <Col >
                         <Input 
-                            inputName={"Server"} 
+                            inputName={"server"} 
                             label={"Server"}
                             placeholder={"Ketikan Server"}
+                            onChange={handleOnChange}
+                            value={orderData.server}
                         />
                         
                     </Col>

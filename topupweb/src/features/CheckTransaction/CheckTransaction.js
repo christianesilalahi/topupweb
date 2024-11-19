@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { CustomButton } from "../../shared/components/Button/Button"
 import { Input } from "../../shared/components/Input/Input"
 import { Search } from "../../shared/utils/Variables/Icons"
@@ -6,6 +7,11 @@ import './CheckTransaction.css'
 
 export const CheckTransaction = () => {
     //pattern invoice dapat di update di utils/Variables/Variables
+    const [invoice, setInvoice] = useState("")
+
+    const handleClick = () => {
+        
+    }
 
     return(<>
     
@@ -17,6 +23,8 @@ export const CheckTransaction = () => {
                         inputName={"Nomor Invoice"}
                         label={"Nomor Invoice Kamu"}
                         placeholder={PatternInvoices}
+                        onChange={setInvoice}
+                        value={invoice}
                     />
                 </div>
             <CustomButton

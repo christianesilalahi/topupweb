@@ -25,3 +25,14 @@ export const TestProducts = {
     
 
 }
+
+export const DefaultOrderData = {
+    id: "",
+    server: "",
+    nominal: 0,
+    jumlahPembelian: 0,
+    pembayaran: "qris",
+    kodePromo: "",
+    email: "",
+    nomorTelepon: ""
+}
